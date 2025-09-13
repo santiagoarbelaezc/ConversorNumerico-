@@ -38,7 +38,7 @@ public class Cliente {
                     continue;
                 }
 
-                // Enviar mensaje al servidor
+                // CAMBIO IMPORTANTE: Enviar el mensaje con ; como separador
                 out.println(mensaje);
 
                 // Recibir y mostrar respuesta
@@ -123,8 +123,8 @@ public class Cliente {
                 return "ERROR: Para opción " + opcion + " debe especificar la longitud de bits";
             }
 
-            // Construir mensaje en formato: opcion:numero:bits
-            return opcion + ":" + numero + (bits > 0 ? ":" + bits : "");
+            // CAMBIO IMPORTANTE: Construir mensaje en formato: opcion;numero;bits
+            return opcion + ";" + numero + (bits > 0 ? ";" + bits : "");
 
         } catch (NumberFormatException e) {
             return "ERROR: Formato de opción incorrecto";
